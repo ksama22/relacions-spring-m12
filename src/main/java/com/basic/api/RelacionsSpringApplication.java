@@ -1,0 +1,14 @@
+package com.basic.api;
+
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class RelacionsSpringApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RelacionsSpringApplication.class, args);
+	}
+
+}
