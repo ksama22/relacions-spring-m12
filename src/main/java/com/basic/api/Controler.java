@@ -38,4 +38,10 @@ public class Controler {
 		return cm1List;
 	}
 	
+	@GetMapping("coursesmaterial/{nId}")
+	public Coursematerial getCoursesMaterialById(@PathVariable long nId) {
+		Coursematerial cm1 = courseMat.findById(nId).get();
+		return cm1;
+	}
+	
 }
