@@ -9,20 +9,17 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Coursematerial {
 
 	@Id 		
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	//La cascada oblida a que el otro dato se inserta a la vez
-	//es decir si el curso no existe pues lo inserta en ese momento
-	
-	@OneToOne //Relacion Una a una,
-	@JoinColumn(name="course_id") //Aqui dfinimos quien es la duenya
+	@JsonIgnore // to ignore the logical property used in serialization and deserialization
+	@OneToOne //Relacion Una a una, //comentado @JoinColumn(name="course") //Aqui dfinimos quien es la duenya
 	private Course course;
-	@Column(name="url")
 	private String url;
 	public Coursematerial(Long id, Course course, String url) {
 		super();

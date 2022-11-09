@@ -5,15 +5,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Course {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name="title")
 	private String title;
+	@OneToOne(mappedBy = "course")
+	private Coursematerial courseMaterial;
 
 	public Course(long id, String title) {
 		this.id = id;
@@ -45,6 +46,5 @@ public class Course {
 	public String toString() {
 		return "Course [id=" + id + ", title=" + title + "]";
 	}
-	
 
 }

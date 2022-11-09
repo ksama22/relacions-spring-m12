@@ -12,17 +12,9 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
-	@Column(name="lastname")
 	private String lastname;
-	
-	@Column(name="firstname")
 	private String firstname;
-	
-	@Column(name="birthdate")
 	private LocalDate birthdate;
-	
-	@Column(name="wantsnewletter")
 	private boolean wantsnewletter;
 	
 	public Student() {
