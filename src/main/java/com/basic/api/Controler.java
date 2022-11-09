@@ -18,6 +18,14 @@ public class Controler {
 	@Autowired // = new CourseRepository()
 	CourseMateriaRepository courseMat;
 
+	
+	//getSwaggerControler
+	/*
+	localhost:8080/swagger-ui/index.html  or /flow-ui.html
+	localhost:8080/api-docs/
+	localhost:8080/api-docs.yaml
+	*/
+	
 	//carga todos los cursos
 	@GetMapping("courses")
 	public List<Course> getCourses() {
