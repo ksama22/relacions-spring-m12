@@ -17,8 +17,10 @@ public class Coursematerial {
 	@Id 		
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonIgnore // to ignore the logical property used in serialization and deserialization
+//	@JsonIgnore // to ignore the logical property used in serialization and deserialization
 	@OneToOne //Relacion Una a una, //comentado @JoinColumn(name="course") //Aqui dfinimos quien es la duenya
+	//@JoinColumn(name="course_id") //Aqui dfinimos quien es la duenya
+
 	private Course course;
 	private String url;
 	public Coursematerial(Long id, Course course, String url) {

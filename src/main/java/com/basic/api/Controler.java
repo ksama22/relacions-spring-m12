@@ -3,6 +3,7 @@ package com.basic.api;
 import java.io.IOException;
 import java.util.List;
 
+import javax.persistence.FetchType;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,8 @@ public class Controler {
 	@GetMapping("courses/{nId}")
 	public Course getCoursesById(@PathVariable long nId) {
 		Course c1 = courseRep.findById(nId).get();
+		System.out.println("Eager: "+ FetchType.EAGER);
+		System.out.println("Lazy: "+ FetchType.LAZY);
 		return c1;
 	}
 
